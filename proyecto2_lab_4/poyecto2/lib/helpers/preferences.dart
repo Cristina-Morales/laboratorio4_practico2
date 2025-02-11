@@ -8,13 +8,12 @@ class Preferences {
     _preferences = await SharedPreferences.getInstance();
   }
 
-  static bool get darkMode{
+  static bool get darkMode {
     return _preferences.getBool('darkMode') ?? _darkMode;
   }
 
-  static set darkMode(bool value){
+  static set darkMode(bool value) {
     _darkMode = value;
     _preferences.setBool('darkMode', value);
   }
-  
 }

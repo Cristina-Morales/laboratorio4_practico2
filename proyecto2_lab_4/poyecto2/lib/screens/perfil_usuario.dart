@@ -7,7 +7,7 @@ class PerfilUsuario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final Map<String, dynamic> arguments={
+    final Map<String, dynamic> arguments = {
       'nombre': 'Cristina',
       'apellido': 'Morales',
       'direccion': 'Malvinas 1214',
@@ -15,18 +15,17 @@ class PerfilUsuario extends StatelessWidget {
       'ocupacion': '',
       'avatar': 'avatar3',
       'favorito': true,
-      'profile':true
+      'profile': true
     };
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home Screen"),
-        centerTitle: true,
-        leadingWidth: 40,
-        toolbarHeight: 80,
-      ),
-      drawer: DrawerMenu(),
-      body:  Profile(args: arguments)
-    );
+        appBar: AppBar(
+          title: const Text("Home Screen"),
+          centerTitle: true,
+          leadingWidth: 40,
+          toolbarHeight: 80,
+        ),
+        drawer: DrawerMenu(),
+        body: Profile(args: arguments));
   }
 }
