@@ -3,13 +3,19 @@ import 'package:poyecto2/repository/gatos/entidades/gato.dart';
 
 class DetalleGatito extends StatelessWidget {
   final Datum gatito;
-  const DetalleGatito({Key? key, required this.gatito})  : super(key: key);
+  const DetalleGatito({super.key, required this.gatito});
 
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+              appBar: AppBar(
+          title: Text(gatito.nombre),
+          centerTitle: true,
+          leadingWidth: 40,
+          toolbarHeight: 80,
+        ),
         body: SafeArea(
       child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start, // 📌 Alinea todo a la izquierda
@@ -30,10 +36,10 @@ class DetalleGatito extends StatelessWidget {
             child: Row(
               children: [
                 Text("Nombre: ${gatito.nombre}",
-                  style: TextStyle(fontSize: 20)),
+                  style: const TextStyle(fontSize: 20)),
                 const SizedBox(width: 20),
                 Text('Adoptado: ${gatito.adoptado ? "si" : "no :("}',
-                  style: TextStyle(fontSize: 20))
+                  style: const TextStyle(fontSize: 20))
               ],
             ),
           ),
@@ -44,13 +50,13 @@ class DetalleGatito extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Ciudad: ${gatito.ciudad}",
-                    style: TextStyle(fontSize: 20,)),
+                    style: const TextStyle(fontSize: 20,)),
                   Text("Fecha nacimiento: ${gatito.cumple.day}/${gatito.cumple.month}/${gatito.cumple.year} ",
-                  style: TextStyle(fontSize: 20,)),
+                  style: const TextStyle(fontSize: 20,)),
                   Text("Raza: ${gatito.raza}",
-                  style: TextStyle(fontSize: 20,)),
+                  style: const TextStyle(fontSize: 20,)),
                   Text("Sexo: ${gatito.sexo == Sexo.FEMALE? "Hembra": "Macho"}",
-                  style: TextStyle(fontSize: 20,)),
+                  style: const TextStyle(fontSize: 20,)),
                 ],
               ))
         ],
